@@ -27,6 +27,8 @@ function divCreator(divContent){
     newDiv.appendChild(elementIMG);
 
     newDiv.appendChild(elementH2);
+
+    newDiv.appendChild(elementP0);
     
     elementCARDSDIV.appendChild(newDiv);
 
