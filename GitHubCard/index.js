@@ -2,6 +2,23 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+function divCreator(divTitle){
+  let newDiv = document.createElement('div');
+  newDiv.textContent = divTitle;
+  newDiv.classList.add('card');  
+  return newDiv;
+}
+
+    axios.get('https://api.github.com/users/Carl-Stanley')
+    .then( response => {
+            response.data.forEach( item => {
+            let card = divCreator(item);
+            parent.appendChild(card);
+        })
+    })
+    .catch( error => {
+        console.log("Error:", error);
+    })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
