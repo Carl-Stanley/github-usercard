@@ -22,12 +22,24 @@ function divCreator(divContent){
     let elementP3 = document.createElement("p");
     let elementP4 = document.createElement("p");
     let elementP5 = document.createElement("p");
-    
+    let elementA = document.createElement("a");
     
     elementP1.innerText = 'location: ' + divContent.location;
 
-    elementP2.innerText = 'profile: ' + '<a href='  + divContent.html_url + '>' + divContent.html_url + '</a>';
+    elementP2.innerText = 'profile: '; 
+    
+    elementA.src = divContent.html_url;
+    
+    elementA.innerText = divContent.html_url; 
+    
+    elementP2.appendChild(elementA);
 
+    elementP3.innerText = 'followers: ' + divContent.followers;
+
+    elementP4.innerText = 'following: ' + divContent.following;
+
+    elementP5.innerText = 'bio: ' + divContent.bio;
+    
     elementH2.innerText = divContent.name;
 
     elementIMG.src = divContent.avatar_url;
@@ -41,6 +53,9 @@ function divCreator(divContent){
     newDiv2.appendChild(elementP0);
     newDiv2.appendChild(elementP1);
     newDiv2.appendChild(elementP2);
+    newDiv2.appendChild(elementP3);
+    newDiv2.appendChild(elementP4);
+    newDiv2.appendChild(elementP5);
 
 
     newDiv.appendChild(newDiv2);
