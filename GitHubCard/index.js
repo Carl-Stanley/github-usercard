@@ -29,7 +29,7 @@ function divCreator(divContent){
     elementP2.innerText = 'profile: '; 
     
     elementA.src = divContent.html_url;
-    
+
     elementA.innerText = divContent.html_url; 
     
     elementP2.appendChild(elementA);
@@ -57,14 +57,9 @@ function divCreator(divContent){
     newDiv2.appendChild(elementP4);
     newDiv2.appendChild(elementP5);
 
-
     newDiv.appendChild(newDiv2);
-
     
     elementCARDSDIV.appendChild(newDiv);
-
-    
-
      
 }
 
