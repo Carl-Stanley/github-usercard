@@ -1,12 +1,36 @@
-/* Step 1: using axios, send a GET request to the following URL 
-           (replacing the palceholder with your Github name):
-           https://api.github.com/users/<your name>
-*/
-function divCreator(divContent){
 
-  let newDiv = document.createElement('div');
-  newDiv.classList.add('card');  
-  
+// Div Component Creator
+function divCreator(divContent){
+    // Get the Cards DIV
+    let elementCARDSDIV = document.getElementsByClassName("cards")[0];
+   
+    let newDiv = document.createElement('div');
+    newDiv.classList.add('card'); 
+
+    let elementH2 = document.createElement("h2");
+    elementH2.classList.add('name');
+
+    let elementIMG = document.createElement("img");
+    
+    let elementP0 = document.createElement("p");
+    elementP0.classList.add('username');
+
+    let elementP1 = document.createElement("p");
+    let elementP2 = document.createElement("p");
+
+    elementH2.innerText = divContent.name;
+
+    elementIMG.src = divContent.avatar_url;
+    
+    elementP0.innerText = divContent.login;
+
+    newDiv.appendChild(elementIMG);
+
+    newDiv.appendChild(elementH2);
+    
+    elementCARDSDIV.appendChild(newDiv);
+
+     
 }
 
 
@@ -50,7 +74,23 @@ function getProfile(url) {
   url = 'https://api.github.com/users/bigknell';
 
   getProfile(url);
-  
+
+  url = 'https://api.github.com/users/justsml';
+
+  getProfile(url);
+
+  url = 'https://api.github.com/users/luishrd';
+
+  getProfile(url);
+
+  url = 'https://api.github.com/users/dustinmyers';
+
+  getProfile(url);
+
+/* Step 1: using axios, send a GET request to the following URL 
+           (replacing the palceholder with your Github name):
+           https://api.github.com/users/<your name>
+*/
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
