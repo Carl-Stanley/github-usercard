@@ -9,7 +9,10 @@ function divCreator(divContent){
   
 }
 
-    axios.get('https://api.github.com/users/Carl-Stanley')
+
+
+function getProfile(url) {
+    axios.get(url)
     .then( response => {
            
        let followersobjArray = [];
@@ -27,14 +30,27 @@ function divCreator(divContent){
        divContent.following = objArray["following"];
        divContent.bio = objArray["bio"];        
        
+       divCreator(divContent);
        console.log(divContent);
        
           })
     .catch( error => {
         console.log("Error:", error);
     })
+  };
 
+  let url = 'https://api.github.com/users/Carl-Stanley';
+
+  getProfile(url);
+
+  url = 'https://api.github.com/users/Nebadon1';
+
+  getProfile(url);
     
+  url = 'https://api.github.com/users/bigknell';
+
+  getProfile(url);
+  
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
