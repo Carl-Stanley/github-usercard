@@ -7,6 +7,8 @@ function divCreator(divContent){
     let newDiv = document.createElement('div');
     newDiv.classList.add('card'); 
 
+    let newDiv2 = document.createElement('div');
+
     let elementH2 = document.createElement("h2");
     elementH2.classList.add('name');
 
@@ -17,6 +19,14 @@ function divCreator(divContent){
 
     let elementP1 = document.createElement("p");
     let elementP2 = document.createElement("p");
+    let elementP3 = document.createElement("p");
+    let elementP4 = document.createElement("p");
+    let elementP5 = document.createElement("p");
+    
+    
+    elementP1.innerText = 'location: ' + divContent.location;
+
+    elementP2.innerText = 'profile: ' + '<a href='  + divContent.html_url + '>' + divContent.html_url + '</a>';
 
     elementH2.innerText = divContent.name;
 
@@ -26,11 +36,19 @@ function divCreator(divContent){
 
     newDiv.appendChild(elementIMG);
 
-    newDiv.appendChild(elementH2);
+    newDiv2.appendChild(elementH2);
 
-    newDiv.appendChild(elementP0);
+    newDiv2.appendChild(elementP0);
+    newDiv2.appendChild(elementP1);
+    newDiv2.appendChild(elementP2);
+
+
+    newDiv.appendChild(newDiv2);
+
     
     elementCARDSDIV.appendChild(newDiv);
+
+    
 
      
 }
@@ -55,7 +73,7 @@ function getProfile(url) {
        divContent.followers = objArray["followers"];
        divContent.following = objArray["following"];
        divContent.bio = objArray["bio"];        
-       
+       divContent.html_url = objArray["html_url"];
        divCreator(divContent);
        console.log(divContent);
        
